@@ -956,7 +956,7 @@ Entry.Neobot.getBlocks = function() {
                 return script.callReturn();
             },
             syntax: { js: [], py: ['Neobot.stop_left()'] },
-        },
+        }, 
         neobot_right_motor: {
             color: EntryStatic.colorSet.block.default.HARDWARE,
             outerLine: EntryStatic.colorSet.block.darken.HARDWARE,
