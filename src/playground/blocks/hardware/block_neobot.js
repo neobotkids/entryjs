@@ -873,6 +873,8 @@ Entry.Neobot.getBlocks = function() {
             },
             syntax: { js: [], py: ['%1get_motor_speed#'] },
         },
+
+
         neobot_left_motor: {
             color: EntryStatic.colorSet.block.default.HARDWARE,
             outerLine: EntryStatic.colorSet.block.darken.HARDWARE,
@@ -919,13 +921,17 @@ Entry.Neobot.getBlocks = function() {
             class: 'neobot_motor',
             isNotFor: ['neobot'],
             func: function(sprite, script) {
-                var speed = Entry.parseNumber(script.getStringValue('SPEED'));
                 var direction = script.getNumberField('DIRECTION');
+                var speed = Entry.parseNumber(script.getStringValue('SPEED'));
+                
                 Entry.hw.sendQueue['DCL'] = speed + direction;
                 return script.callReturn();
             },
             syntax: { js: [], py: ['Neobot.turn_left(%1, %2)'] },
         },
+
+
+        
         neobot_stop_left_motor: {
             color: EntryStatic.colorSet.block.default.HARDWARE,
             outerLine: EntryStatic.colorSet.block.darken.HARDWARE,
